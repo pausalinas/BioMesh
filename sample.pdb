@@ -1,0 +1,32 @@
+HEADER    TRANSFERASE/DNA                         20-NOV-06   2J5I              
+TITLE     SAMPLE PROTEIN STRUCTURE FOR BIOMESH TESTING                   
+REMARK   2 RESOLUTION.    1.80 ANGSTROMS.                                 
+ATOM      1  N   ALA A   1      20.154  16.967  18.849  1.00 16.77           N  
+ATOM      2  CA  ALA A   1      20.522  18.170  18.056  1.00 16.18           C  
+ATOM      3  C   ALA A   1      19.299  18.645  17.287  1.00 15.91           C  
+ATOM      4  O   ALA A   1      18.964  19.830  17.292  1.00 15.76           O  
+ATOM      5  CB  ALA A   1      21.163  19.254  18.881  1.00 15.28           C  
+ATOM      6  N   GLY A   2      18.629  17.799  16.589  1.00 15.13           N  
+ATOM      7  CA  GLY A   2      17.451  18.104  15.779  1.00 14.70           C  
+ATOM      8  C   GLY A   2      16.177  18.332  16.573  1.00 14.73           C  
+ATOM      9  O   GLY A   2      16.198  18.414  17.799  1.00 15.23           O  
+ATOM     10  N   VAL A   3      15.035  18.414  15.906  1.00 14.56           N  
+ATOM     11  CA  VAL A   3      13.739  18.634  16.527  1.00 14.23           C  
+ATOM     12  C   VAL A   3      12.539  18.072  15.786  1.00 14.25           C  
+ATOM     13  O   VAL A   3      12.508  17.992  14.554  1.00 14.39           O  
+ATOM     14  CB  VAL A   3      13.455  20.106  16.798  1.00 13.83           C  
+ATOM     15  CG1 VAL A   3      12.101  20.280  17.486  1.00 13.25           C  
+ATOM     16  CG2 VAL A   3      14.594  20.731  17.578  1.00 13.44           C  
+ATOM     17  N   LEU A   4      11.520  17.632  16.476  1.00 14.10           N  
+ATOM     18  CA  LEU A   4      10.301  17.058  15.895  1.00 14.03           C  
+ATOM     19  C   LEU A   4       9.067  17.926  15.957  1.00 14.24           C  
+ATOM     20  O   LEU A   4       8.867  18.647  16.930  1.00 14.39           O  
+ATOM     21  CB  LEU A   4      10.001  15.723  16.568  1.00 13.81           C  
+ATOM     22  CG  LEU A   4      11.096  14.661  16.578  1.00 13.36           C  
+ATOM     23  CD1 LEU A   4      10.721  13.495  17.481  1.00 12.90           C  
+ATOM     24  CD2 LEU A   4      11.318  14.102  15.183  1.00 13.11           C  
+HETATM   25  O   HOH A 101      15.372  15.677  21.468  1.00 22.62           O  
+HETATM   26  O   HOH A 102      17.094  23.212  19.708  1.00 25.47           O  
+HETATM   27  O   HOH A 103      19.987  20.845  21.418  1.00 26.17           O  
+CONECT   25   26                                                                
+END                                                                             
