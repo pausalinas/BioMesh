@@ -1,0 +1,37 @@
+HEADER    HYDROLASE/DNA                           20-MAY-93   1HTQ              
+TITLE     STRUCTURE OF THE LARGE FRAGMENT OF THERMUS AQUATICUS DNA       
+TITLE    2 POLYMERASE I                                                   
+COMPND    MOL_ID: 1;                                                      
+COMPND   2 MOLECULE: DNA POLYMERASE I;                                    
+COMPND   3 CHAIN: A;                                                      
+COMPND   4 ENGINEERED: YES                                                
+SOURCE    MOL_ID: 1;                                                      
+SOURCE   2 ORGANISM_SCIENTIFIC: THERMUS AQUATICUS;                       
+SOURCE   3 ORGANISM_TAXID: 271                                            
+ATOM      1  N   ALA A   1      20.154  16.967  22.084  1.00 25.00           N  
+ATOM      2  CA  ALA A   1      19.030  16.101  21.671  1.00 25.00           C  
+ATOM      3  C   ALA A   1      17.664  16.849  21.548  1.00 25.00           C  
+ATOM      4  O   ALA A   1      17.657  18.076  21.421  1.00 25.00           O  
+ATOM      5  CB  ALA A   1      18.756  15.034  22.729  1.00 25.00           C  
+ATOM      6  N   VAL A   2      16.534  16.162  21.586  1.00 25.00           N  
+ATOM      7  CA  VAL A   2      15.168  16.724  21.474  1.00 25.00           C  
+ATOM      8  C   VAL A   2      14.054  15.678  21.627  1.00 25.00           C  
+ATOM      9  O   VAL A   2      14.031  14.834  22.517  1.00 25.00           O  
+ATOM     10  CB  VAL A   2      14.952  17.854  22.534  1.00 25.00           C  
+ATOM     11  CG1 VAL A   2      13.553  18.461  22.443  1.00 25.00           C  
+ATOM     12  CG2 VAL A   2      16.041  18.916  22.389  1.00 25.00           C  
+ATOM     13  N   GLY A   3      13.064  15.708  20.726  1.00 25.00           N  
+ATOM     14  CA  GLY A   3      11.926  14.798  20.784  1.00 25.00           C  
+ATOM     15  C   GLY A   3      10.576  15.487  20.548  1.00 25.00           C  
+ATOM     16  O   GLY A   3      10.524  16.654  20.157  1.00 25.00           O  
+ATOM     17  N   THR A   4       9.469  14.837  20.802  1.00 25.00           N  
+ATOM     18  CA  THR A   4       8.120  15.394  20.598  1.00 25.00           C  
+ATOM     19  C   THR A   4       7.003  14.353  20.758  1.00 25.00           C  
+ATOM     20  O   THR A   4       6.978  13.359  21.479  1.00 25.00           O  
+ATOM     21  CB  THR A   4       7.863  16.514  21.654  1.00 25.00           C  
+ATOM     22  OG1 THR A   4       8.934  17.456  21.694  1.00 25.00           O  
+ATOM     23  CG2 THR A   4       6.548  17.262  21.402  1.00 25.00           C  
+HETATM   24  O   HOH A 101      15.372  19.567  25.045  1.00 30.00           O  
+HETATM   25  O   HOH A 102      12.146  18.896  18.236  1.00 30.00           O  
+HETATM   26  O   HOH A 103       8.503  19.421  23.174  1.00 30.00           O  
+END
