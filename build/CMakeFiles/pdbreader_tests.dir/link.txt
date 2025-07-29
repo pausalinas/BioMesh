@@ -1,0 +1,1 @@
+/usr/bin/c++ -Xlinker --dependency-file=CMakeFiles/pdbreader_tests.dir/link.d CMakeFiles/pdbreader_tests.dir/tests/test_atom.cpp.o CMakeFiles/pdbreader_tests.dir/tests/test_pdbreader.cpp.o -o pdbreader_tests  libpdbreader.a lib/libgtest_main.a lib/libgtest.a
