@@ -1,0 +1,5 @@
+if(EXISTS "/workspace/build/pdbreader_tests[1]_tests.cmake")
+  include("/workspace/build/pdbreader_tests[1]_tests.cmake")
+else()
+  add_test(pdbreader_tests_NOT_BUILT pdbreader_tests_NOT_BUILT)
+endif()

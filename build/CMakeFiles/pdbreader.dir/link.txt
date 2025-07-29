@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpdbreader.a CMakeFiles/pdbreader.dir/src/Atom.cpp.o CMakeFiles/pdbreader.dir/src/PDBReader.cpp.o
+/usr/bin/ranlib libpdbreader.a
