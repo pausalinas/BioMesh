@@ -1,0 +1,7 @@
+HEADER    MALFORMED PDB TEST                      01-JAN-00   TEST            
+ATOM      1  N   ALA A   1      20.154  16.967  14.365  1.00 20.00           N  
+ATOM  INVALID LINE TOO SHORT
+ATOM      3  C   ALA A   1      18.633  18.206  15.778  1.00 20.00           C  
+ATOM      4  O   ALA A   1   INVALID  18.304  16.897  1.00 20.00           O  
+ATOM      5  CB  ALA A   1      17.823  16.157  14.562  1.00 20.00           C  
+END                                                                             
