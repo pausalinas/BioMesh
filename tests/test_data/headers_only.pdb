@@ -1,0 +1,4 @@
+HEADER    HEADERS ONLY                            01-JAN-23   TEST
+TITLE     FILE WITH NO ATOM RECORDS
+REMARK   This file has no ATOM or HETATM records
+END
