@@ -1,0 +1,19 @@
+HEADER    TEST PROTEIN                            01-JAN-23   TEST            
+TITLE     SMALL PROTEIN STRUCTURE FOR TESTING                                    
+ATOM      1  N   ALA A   1      20.154  -6.351   1.610  1.00 10.00           N  
+ATOM      2  CA  ALA A   1      19.030  -6.621   2.498  1.00 10.00           C  
+ATOM      3  C   ALA A   1      19.290  -7.853   3.339  1.00 10.00           C  
+ATOM      4  O   ALA A   1      20.396  -8.130   3.821  1.00 10.00           O  
+ATOM      5  CB  ALA A   1      18.823  -5.421   3.427  1.00 10.00           C  
+ATOM      6  N   GLY A   2      18.211  -8.585   3.465  1.00 10.00           N  
+ATOM      7  CA  GLY A   2      18.296  -9.781   4.295  1.00 10.00           C  
+ATOM      8  C   GLY A   2      17.041 -10.118   5.063  1.00 10.00           C  
+ATOM      9  O   GLY A   2      15.957  -9.566   4.946  1.00 10.00           O  
+ATOM     10  N   VAL A   3      17.132 -11.100   5.936  1.00 10.00           N  
+ATOM     11  CA  VAL A   3      15.991 -11.514   6.750  1.00 10.00           C  
+ATOM     12  C   VAL A   3      15.805 -12.998   6.514  1.00 10.00           C  
+ATOM     13  O   VAL A   3      16.755 -13.745   6.252  1.00 10.00           O  
+ATOM     14  CB  VAL A   3      16.275 -11.254   8.236  1.00 10.00           C  
+ATOM     15  CG1 VAL A   3      15.093 -11.651   9.097  1.00 10.00           C  
+ATOM     16  CG2 VAL A   3      16.629  -9.795   8.526  1.00 10.00           C  
+END                                                                             

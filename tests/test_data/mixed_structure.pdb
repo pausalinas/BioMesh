@@ -1,0 +1,16 @@
+HEADER    MIXED STRUCTURE                         01-JAN-23   TEST            
+TITLE     PROTEIN WITH LIGAND - MIXED ATOM AND HETATM RECORDS                    
+ATOM      1  N   ALA A   1      20.154  -6.351   1.610  1.00 10.00           N  
+ATOM      2  CA  ALA A   1      19.030  -6.621   2.498  1.00 10.00           C  
+ATOM      3  C   ALA A   1      19.290  -7.853   3.339  1.00 10.00           C  
+ATOM      4  O   ALA A   1      20.396  -8.130   3.821  1.00 10.00           O  
+ATOM      5  CB  ALA A   1      18.823  -5.421   3.427  1.00 10.00           C  
+ATOM      6  N   GLY A   2      18.211  -8.585   3.465  1.00 10.00           N  
+ATOM      7  CA  GLY A   2      18.296  -9.781   4.295  1.00 10.00           C  
+ATOM      8  C   GLY A   2      17.041 -10.118   5.063  1.00 10.00           C  
+ATOM      9  O   GLY A   2      15.957  -9.566   4.946  1.00 10.00           O  
+HETATM   10  C1  LIG B 201      25.123  -2.456   8.789  1.00 20.00           C  
+HETATM   11  C2  LIG B 201      26.234  -3.567   9.890  1.00 20.00           C  
+HETATM   12  O1  LIG B 201      27.345  -4.678  10.991  1.00 20.00           O  
+HETATM   13  N1  LIG B 201      24.012  -1.345   7.678  1.00 20.00           N  
+END                                                                             

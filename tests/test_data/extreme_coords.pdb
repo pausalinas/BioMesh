@@ -1,0 +1,4 @@
+HEADER    EXTREME COORDINATES                     01-JAN-23   TEST
+ATOM      1  CA  ALA A   1    -999.999-999.999-999.999  1.00 99.99           C
+ATOM      2  CA  ALA A   2     999.999 999.999 999.999  1.00 99.99           C
+END

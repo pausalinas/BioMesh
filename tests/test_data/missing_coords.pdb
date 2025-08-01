@@ -1,0 +1,4 @@
+HEADER    MISSING COORDINATES                     01-JAN-23   TEST
+ATOM      1  CA  ALA A   1                              1.00 10.00           C
+ATOM      2  CA  ALA A   2       0.000   0.000          1.00 10.00           C
+END
