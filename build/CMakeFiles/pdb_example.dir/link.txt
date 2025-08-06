@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -g -Wl,--dependency-file=CMakeFiles/pdb_example.dir/link.d CMakeFiles/pdb_example.dir/pdb_example.cpp.o -o pdb_example
