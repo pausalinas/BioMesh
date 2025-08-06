@@ -1,0 +1,31 @@
+# Build directories
+build/
+bin/
+obj/
+
+# Compiled executables
+pdb_example
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Sample/test files (optional - remove line to include sample files)
+sample.pdb
+small_test.pdb
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+
+# IDE files
+.vscode/
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Temporary files
+*.tmp
+*~
