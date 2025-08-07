@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbiomesh.a CMakeFiles/biomesh.dir/src/atom_builder.cpp.o CMakeFiles/biomesh.dir/src/atomic_spec_table.cpp.o CMakeFiles/biomesh.dir/src/molecule.cpp.o CMakeFiles/biomesh.dir/src/pdb_reader.cpp.o
-/usr/bin/ranlib libbiomesh.a
