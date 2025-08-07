@@ -1,0 +1,4 @@
+/home/runner/work/BioMesh/BioMesh/build/CMakeFiles/biomesh.dir
+/home/runner/work/BioMesh/BioMesh/build/CMakeFiles/biomesh_example.dir
+/home/runner/work/BioMesh/BioMesh/build/CMakeFiles/edit_cache.dir
+/home/runner/work/BioMesh/BioMesh/build/CMakeFiles/rebuild_cache.dir

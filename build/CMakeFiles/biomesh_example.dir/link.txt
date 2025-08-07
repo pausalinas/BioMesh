@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/biomesh_example.dir/link.d CMakeFiles/biomesh_example.dir/examples/main.cpp.o -o biomesh_example  libbiomesh.a
