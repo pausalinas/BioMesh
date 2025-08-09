@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbiomesh.a CMakeFiles/biomesh.dir/src/Atom.cpp.o CMakeFiles/biomesh.dir/src/PDBReader.cpp.o CMakeFiles/biomesh.dir/src/BoundingBox.cpp.o
+/usr/bin/ranlib libbiomesh.a
