@@ -3,6 +3,7 @@
 #include <iomanip>
 #include "Atom.h"
 #include "AtomBuilder.h"
+#include "BoundingBox.h"
 
 using namespace BioMesh;
 
@@ -115,6 +116,106 @@ int main() {
                       << std::setw(12) << std::fixed << std::setprecision(3) << spec.radius
                       << std::setw(12) << std::fixed << std::setprecision(3) << spec.mass << "\n";
         }
+
+        // Demonstrate BoundingBox functionality
+        std::cout << "\n7. BoundingBox Spatial Analysis:\n";
+        std::cout << "-------------------------------\n";
+
+        // Create a BoundingBox and calculate bounds from enhanced atoms
+        BoundingBox boundingBox;
+        boundingBox.calculateFromAtoms(enhancedAtoms);
+
+        std::cout << "Bounding box calculated from enhanced atoms:\n";
+        if (!boundingBox.isEmpty()) {
+            std::cout << "  Min coordinates: (" << std::fixed << std::setprecision(3)
+                      << boundingBox.getMinX() << ", " << boundingBox.getMinY() << ", " << boundingBox.getMinZ() << ")\n";
+            std::cout << "  Max coordinates: (" << std::fixed << std::setprecision(3)
+                      << boundingBox.getMaxX() << ", " << boundingBox.getMaxY() << ", " << boundingBox.getMaxZ() << ")\n";
+            
+            double centerX, centerY, centerZ;
+            boundingBox.getCenter(centerX, centerY, centerZ);
+            std::cout << "  Center: (" << std::fixed << std::setprecision(3)
+                      << centerX << ", " << centerY << ", " << centerZ << ")\n";
+            
+            std::cout << "  Dimensions - Width: " << std::fixed << std::setprecision(3) << boundingBox.getWidth()
+                      << " Å, Height: " << boundingBox.getHeight() 
+                      << " Å, Depth: " << boundingBox.getDepth() << " Å\n";
+            std::cout << "  Volume: " << std::fixed << std::setprecision(3) << boundingBox.getVolume() << " ų\n";
+        } else {
+            std::cout << "  Bounding box is empty\n";
+        }
+
+        // Test containment
+        std::cout << "\n8. Point and Atom Containment Testing:\n";
+        std::cout << "-------------------------------------\n";
+
+        // Test some points for containment
+        std::vector<std::array<double, 3>> testPoints = {
+            {3.0, 7.0, 2.0},  // Should be inside
+            {0.0, 0.0, 0.0},  // Should be outside
+            {10.0, 10.0, 10.0}  // Should be outside
+        };
+
+        for (size_t i = 0; i < testPoints.size(); ++i) {
+            const auto& point = testPoints[i];
+            bool contained = boundingBox.contains(point[0], point[1], point[2]);
+            std::cout << "  Point (" << std::fixed << std::setprecision(1) 
+                      << point[0] << ", " << point[1] << ", " << point[2] 
+                      << ") is " << (contained ? "inside" : "outside") << " the bounding box\n";
+        }
+
+        // Test atom containment
+        std::cout << "\nAtom containment testing:\n";
+        for (size_t i = 0; i < std::min(size_t(3), enhancedAtoms.size()); ++i) {
+            const auto& atom = enhancedAtoms[i];
+            bool contained = boundingBox.contains(atom);
+            std::cout << "  " << atom.getChemicalElement() << " atom at (" 
+                      << std::fixed << std::setprecision(3)
+                      << atom.getX() << ", " << atom.getY() << ", " << atom.getZ() 
+                      << ") is " << (contained ? "inside" : "outside") << " the bounding box\n";
+        }
+
+        // Demonstrate expansion
+        std::cout << "\n9. BoundingBox Expansion:\n";
+        std::cout << "------------------------\n";
+        
+        double originalVolume = boundingBox.getVolume();
+        std::cout << "Original volume: " << std::fixed << std::setprecision(3) << originalVolume << " ų\n";
+        
+        boundingBox.expand(1.0);  // Expand by 1 Å in all directions
+        std::cout << "After expanding by 1.0 Å:\n";
+        std::cout << "  New volume: " << std::fixed << std::setprecision(3) << boundingBox.getVolume() << " ų\n";
+        std::cout << "  New dimensions - Width: " << std::fixed << std::setprecision(3) << boundingBox.getWidth()
+                  << " Å, Height: " << boundingBox.getHeight() 
+                  << " Å, Depth: " << boundingBox.getDepth() << " Å\n";
+
+        // Demonstrate different BoundingBox construction methods
+        std::cout << "\n10. BoundingBox Construction Methods:\n";
+        std::cout << "------------------------------------\n";
+
+        // Default constructor (empty)
+        BoundingBox emptyBox;
+        std::cout << "Empty bounding box: " << (emptyBox.isEmpty() ? "empty" : "not empty") 
+                  << ", valid: " << (emptyBox.isValid() ? "yes" : "no") << "\n";
+
+        // Explicit bounds constructor
+        BoundingBox explicitBox(-5.0, -5.0, -5.0, 5.0, 5.0, 5.0);
+        std::cout << "Explicit bounds box (-5,-5,-5) to (5,5,5):\n";
+        std::cout << "  Volume: " << std::fixed << std::setprecision(1) << explicitBox.getVolume() << " ų\n";
+        std::cout << "  Contains origin (0,0,0): " << (explicitBox.contains(0.0, 0.0, 0.0) ? "yes" : "no") << "\n";
+
+        // Add individual points
+        BoundingBox pointBox;
+        pointBox.addPoint(1.0, 2.0, 3.0);
+        pointBox.addPoint(-1.0, -2.0, -3.0);
+        pointBox.addPoint(0.0, 0.0, 0.0);
+        
+        double centerX, centerY, centerZ;
+        pointBox.getCenter(centerX, centerY, centerZ);
+        std::cout << "Point-by-point constructed box:\n";
+        std::cout << "  Center: (" << std::fixed << std::setprecision(1) 
+                  << centerX << ", " << centerY << ", " << centerZ << ")\n";
+        std::cout << "  Contains (0.5, 1.0, 1.5): " << (pointBox.contains(0.5, 1.0, 1.5) ? "yes" : "no") << "\n";
 
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

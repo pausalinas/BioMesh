@@ -15,6 +15,7 @@ find_package(Threads REQUIRED)
 set(SOURCES
     src/Atom.cpp
     src/AtomBuilder.cpp
+    src/BoundingBox.cpp
 )
 
 # Create library
