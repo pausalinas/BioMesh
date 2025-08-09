@@ -1,0 +1,46 @@
+# Build directories
+build/
+build-*/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executables
+*.exe
+*.out
+atom_example
+atom_tests
+
+# Libraries
+*.a
+*.so
+*.dylib
+
+# Object files
+*.o
+*.obj
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing output
+Testing/
+
+# Documentation build
+docs/_build/
