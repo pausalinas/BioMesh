@@ -13,8 +13,6 @@ Makefile
 *.out
 atom_example
 atom_tests
-enhanced_bbox_tests
-enhanced_bbox_example
 
 # Libraries
 *.a
