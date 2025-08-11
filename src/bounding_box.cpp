@@ -1,4 +1,4 @@
-#include "BoundingBox.h"
+#include "biomesh/bounding_box.h"
 #include <stdexcept>
 #include <cmath>
 #include <algorithm>
@@ -95,6 +95,27 @@ bool BoundingBox::contains(const Atom& atom) const {
     return contains(atom.getX(), atom.getY(), atom.getZ());
 }
 
+bool BoundingBox::contains(const BoundingBox& other) const {
+    if (isEmpty() || other.isEmpty()) {
+        return false;
+    }
+    
+    return (other.minX_ >= minX_ && other.maxX_ <= maxX_ &&
+            other.minY_ >= minY_ && other.maxY_ <= maxY_ &&
+            other.minZ_ >= minZ_ && other.maxZ_ <= maxZ_);
+}
+
+bool BoundingBox::intersects(const BoundingBox& other) const {
+    if (isEmpty() || other.isEmpty()) {
+        return false;
+    }
+    
+    // Check if boxes are separated in any dimension
+    return !(other.maxX_ < minX_ || other.minX_ > maxX_ ||
+             other.maxY_ < minY_ || other.minY_ > maxY_ ||
+             other.maxZ_ < minZ_ || other.minZ_ > maxZ_);
+}
+
 void BoundingBox::reset() {
     initializeEmpty();
 }
@@ -121,6 +142,33 @@ void BoundingBox::expand(double margin) {
     maxX_ += margin;
     maxY_ += margin;
     maxZ_ += margin;
+}
+
+std::array<BoundingBox, 8> BoundingBox::subdivide() const {
+    std::array<BoundingBox, 8> octants;
+    
+    if (isEmpty()) {
+        // Return array of empty boxes
+        return octants;
+    }
+    
+    // Calculate midpoints
+    double midX = (minX_ + maxX_) * 0.5;
+    double midY = (minY_ + maxY_) * 0.5;
+    double midZ = (minZ_ + maxZ_) * 0.5;
+    
+    // Create 8 octants
+    // Octant ordering: [X][Y][Z] where 0=lower half, 1=upper half
+    octants[0] = BoundingBox(minX_, minY_, minZ_, midX, midY, midZ);     // [---]
+    octants[1] = BoundingBox(minX_, minY_, midZ, midX, midY, maxZ_);     // [--+]
+    octants[2] = BoundingBox(minX_, midY, minZ_, midX, maxY_, midZ);     // [-+-]
+    octants[3] = BoundingBox(minX_, midY, midZ, midX, maxY_, maxZ_);     // [-++]
+    octants[4] = BoundingBox(midX, minY_, minZ_, maxX_, midY, midZ);     // [+--]
+    octants[5] = BoundingBox(midX, minY_, midZ, maxX_, midY, maxZ_);     // [+-+]
+    octants[6] = BoundingBox(midX, midY, minZ_, maxX_, maxY_, midZ);     // [++-]
+    octants[7] = BoundingBox(midX, midY, midZ, maxX_, maxY_, maxZ_);     // [+++]
+    
+    return octants;
 }
 
 void BoundingBox::initializeEmpty() {

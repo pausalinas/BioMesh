@@ -15,7 +15,7 @@ find_package(Threads REQUIRED)
 set(SOURCES
     src/Atom.cpp
     src/AtomBuilder.cpp
-    src/BoundingBox.cpp
+    src/bounding_box.cpp
 )
 
 # Create library
@@ -25,6 +25,9 @@ target_include_directories(biomesh PUBLIC include)
 # Examples
 add_executable(atom_example examples/atom_example.cpp)
 target_link_libraries(atom_example biomesh)
+
+add_executable(enhanced_bbox_example examples/enhanced_bbox_example.cpp)
+target_link_libraries(enhanced_bbox_example biomesh)
 
 # Enable testing
 enable_testing()
@@ -44,8 +47,15 @@ if(GTEST_FOUND AND GTEST_MAIN_FOUND)
     target_include_directories(atom_tests PRIVATE ${GTEST_INCLUDE_DIRS})
     target_compile_options(atom_tests PRIVATE ${GTEST_CFLAGS_OTHER})
     
-    # Add test
+    # Enhanced BoundingBox tests
+    add_executable(enhanced_bbox_tests tests/enhanced_bounding_box_tests.cpp)
+    target_link_libraries(enhanced_bbox_tests biomesh ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES} Threads::Threads)
+    target_include_directories(enhanced_bbox_tests PRIVATE ${GTEST_INCLUDE_DIRS})
+    target_compile_options(enhanced_bbox_tests PRIVATE ${GTEST_CFLAGS_OTHER})
+    
+    # Add tests
     add_test(NAME AtomTests COMMAND atom_tests)
+    add_test(NAME EnhancedBoundingBoxTests COMMAND enhanced_bbox_tests)
     message(STATUS "GoogleTest found. Tests will be built.")
 else()
     # Try manual linkage for Ubuntu package
@@ -58,7 +68,12 @@ else()
         target_link_libraries(atom_tests biomesh ${GTEST_LIB} ${GTEST_MAIN_LIB} Threads::Threads)
         target_include_directories(atom_tests PRIVATE ${GTEST_INCLUDE_DIR})
         
+        add_executable(enhanced_bbox_tests tests/enhanced_bounding_box_tests.cpp)
+        target_link_libraries(enhanced_bbox_tests biomesh ${GTEST_LIB} ${GTEST_MAIN_LIB} Threads::Threads)
+        target_include_directories(enhanced_bbox_tests PRIVATE ${GTEST_INCLUDE_DIR})
+        
         add_test(NAME AtomTests COMMAND atom_tests)
+        add_test(NAME EnhancedBoundingBoxTests COMMAND enhanced_bbox_tests)
         message(STATUS "GoogleTest found manually. Tests will be built.")
     else()
         message(STATUS "GoogleTest not found. Tests will not be built.")
